@@ -1,0 +1,154 @@
+:root {
+    --color-primary: #4dabf7;
+    --color-primary-dark: #339af0;
+    --color-text: #e9ecef;
+    --color-text-light: #adb5bd;
+    --color-text-dark: #f8f9fa;
+    --color-background: #212529;
+    --color-background-light: #343a40;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+}
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-primary-dark);
+}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.app-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: var(--color-background);
+    z-index: 1000;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    box-shadow: 0 1px 3px var(--color-shadow);
+}
+.app-header .logo {
+    margin-bottom: 0;
+}
+.app-header .logo h1 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+.app-header .logo a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.main-navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+    width: auto;
+}
+.main-navigation a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: relative;
+    width: auto;
+    text-align: center;
+}
+.main-navigation a:hover {
+    background-color: var(--color-background-light);
+}
+.main-navigation a.active {
+    color: var(--color-primary);
+    background: none;
+}
+.main-navigation a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: var(--color-primary);
+}
+.main-navigation a.active:hover {
+    background-color: transparent;
+}
+.app-content {
+    flex: 1;
+    padding: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    box-sizing: border-box;
+}
+
+.app-footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    border-top: 1px solid var(--color-background-light);
+}
+
+.app-footer p {
+    margin: 0.25rem 0;
+}
+
+.app-footer a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    color: var(--color-text);
+}
+
+/* Form Styling */
+.contact-form {
+    background-color: var(--color-background-light);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+    margin-bottom: 1.5rem;
+}
+
+/* Media Queries for larger screens */
+@media screen and (min-width: 768px) {
+    .app-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .main-navigation {
+        gap: 0.5rem;
+    }
+
+    .main-navigation a {
+        font-size: 0.875rem;
+    }
+
+    .app-content {
+        padding: 4rem 20px 20px;
+        max-width: 33vw;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
